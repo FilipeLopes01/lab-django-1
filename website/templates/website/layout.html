@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    		<title>Website</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+	</head>
+	<body>
+        <header class="jumbotron text-center">
+            <h1>Formula 1 Temporada 2021</h1>
+            <p>Principais candidatos ao titulo</p>
+            <nav class="btn-group" role="group" aria-label="Basic example">
+                <a href="{% url 'website:temporada2021' %}" type="button" class="btn btn-danger">Pagina Inicial</a>
+                <a href="{% url 'website:piloto1' %}" type="button" class="btn btn-danger">Lewis Hamilton</a>
+                <a href="{% url 'website:piloto2' %}" type="button" class="btn btn-danger">Max Verstappen</a>
+            </nav>
+        </header>
+        <article class="container">
+		    <main class="col-sm-6">
+	                {% block main %}
+                    {% endblock main %}
+            </main>
+		    <aside class="col-sm-6">
+                {% load static %}
+                <img src="{% static 'website/images/image.jpg' %}">
+            </aside>
+	    </article>
+	    <footer>Filipe Lopes</footer>
+	</body>
+</html>
